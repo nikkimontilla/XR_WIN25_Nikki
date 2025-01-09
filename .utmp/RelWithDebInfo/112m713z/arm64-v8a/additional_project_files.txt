@@ -1,0 +1,17 @@
+F:\VXR 2024-2025_Leth Polytechnic\W2025\XR_WIN25_Nikki\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\GAToUnityCallbacks.h
+F:\VXR 2024-2025_Leth Polytechnic\W2025\XR_WIN25_Nikki\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\MacroEnd.h
+F:\VXR 2024-2025_Leth Polytechnic\W2025\XR_WIN25_Nikki\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\MacroHeaderBegin.h
+F:\VXR 2024-2025_Leth Polytechnic\W2025\XR_WIN25_Nikki\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\MacroSourceBegin.h
+F:\VXR 2024-2025_Leth Polytechnic\W2025\XR_WIN25_Nikki\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGAApplication.h
+F:\VXR 2024-2025_Leth Polytechnic\W2025\XR_WIN25_Nikki\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGAConfiguration.h
+F:\VXR 2024-2025_Leth Polytechnic\W2025\XR_WIN25_Nikki\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGADebug.h
+F:\VXR 2024-2025_Leth Polytechnic\W2025\XR_WIN25_Nikki\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGAEvents.h
+F:\VXR 2024-2025_Leth Polytechnic\W2025\XR_WIN25_Nikki\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGAInput.h
+F:\VXR 2024-2025_Leth Polytechnic\W2025\XR_WIN25_Nikki\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGASoftKeyboard.h
+F:\VXR 2024-2025_Leth Polytechnic\W2025\XR_WIN25_Nikki\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGASoftKeyboardCallbacks.h
+F:\VXR 2024-2025_Leth Polytechnic\W2025\XR_WIN25_Nikki\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGATypes.h
+F:\VXR 2024-2025_Leth Polytechnic\W2025\XR_WIN25_Nikki\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGAVersion.h
+F:\VXR 2024-2025_Leth Polytechnic\W2025\XR_WIN25_Nikki\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UnityToGACallbacks.h
+F:\VXR 2024-2025_Leth Polytechnic\W2025\XR_WIN25_Nikki\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UnityToGAConfigurationCallbacks.h
+F:\VXR 2024-2025_Leth Polytechnic\W2025\XR_WIN25_Nikki\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UnityToGAKeyEventCallbacks.h
+F:\VXR 2024-2025_Leth Polytechnic\W2025\XR_WIN25_Nikki\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UnityToGAMotionEventCallbacks.h

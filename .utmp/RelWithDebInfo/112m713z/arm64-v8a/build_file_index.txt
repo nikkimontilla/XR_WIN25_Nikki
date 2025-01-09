@@ -1,0 +1,2 @@
+F:\VXR 2024-2025_Leth Polytechnic\W2025\XR_WIN25_Nikki\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+F:\VXR 2024-2025_Leth Polytechnic\W2025\XR_WIN25_Nikki\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt
