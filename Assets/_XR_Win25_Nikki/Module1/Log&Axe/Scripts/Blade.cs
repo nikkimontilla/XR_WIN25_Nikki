@@ -17,12 +17,6 @@ public class Blade : MonoBehaviour
         m_grabInteractable = GetComponent<XRGrabInteractable>();
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
     private void OnEnable()
     {
         if (m_grabInteractable == null)
@@ -42,7 +36,7 @@ public class Blade : MonoBehaviour
         m_controllerDataReader = m_interactor.gameObject.GetComponent<ControllerDataReader>();
     }
 
-    private void ResetControllerDataReader(SelectExitEventArgs arg)
+    private void ResetControllerDataReader(SelectExitEventArgs arg0)
     {
         m_controllerDataReader = null;
     }
