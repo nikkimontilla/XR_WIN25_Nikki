@@ -1,6 +1,10 @@
 using System;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
+
+/// <summary>
+/// The purpose of this script is to check whether its being hit by a blage and react accordingly
+/// 3 possible behaviours
+/// </summary>
 
 [RequireComponent(typeof(Collider))]
 
@@ -8,6 +12,9 @@ public class Log : MonoBehaviour
 {
     [SerializeField] GameObject logOne;
     [SerializeField] GameObject logTwo;
+
+    [SerializeField] float m_splitThreshold = 1f;
+    [SerializeField] float m_stickThreshold = 0.5f;
 
     // Reference collider
     Collider m_collider = null;
@@ -24,6 +31,7 @@ public class Log : MonoBehaviour
             Debug.Log("collision happening");
 
         Blade blade = null;
+
         if (other.CompareTag("Blade"))
         {
             blade = other.GetComponentInParent<Blade>();
@@ -36,11 +44,14 @@ public class Log : MonoBehaviour
         if (blade.m_controllerDataReader == null)
             return;
 
-        Split();
+        Split(blade);
     }
+    
 
-    private void Split()
+    private void Split(Blade blade)
     {
+        // Split Log  when speed is greater than threshold
+
         /*Rigidbody rgOne = logOne.GetComponent<Rigidbody>();
         Rigidbody rgTwo = logTwo.GetComponent<Rigidbody>();
 
@@ -51,8 +62,24 @@ public class Log : MonoBehaviour
         rgTwo.isKinematic = false;
         */
 
-        EnablePhysics(logOne);
-        EnablePhysics(logTwo);
+        float bladeHitSpeed = blade.m_controllerDataReader.Velocity.magnitude;
+        Debug.Log($"Blade Hit Speed: {bladeHitSpeed} / Split: {m_splitThreshold} / Stick: {m_stickThreshold}");
+
+        if (bladeHitSpeed > m_splitThreshold)
+        {
+            EnablePhysics(logOne);
+            EnablePhysics(logTwo);
+
+            // Disable collision so we can only split once 
+            m_collider.enabled = false;
+        }
+
+        // Axe gets stuck if speed is slow
+        else if (bladeHitSpeed > m_stickThreshold)
+        {
+            blade.Drop();
+            blade.DisablePhysics();
+        }
     }
 
     // This func refactors Split - more effecient
@@ -64,5 +91,4 @@ public class Log : MonoBehaviour
         rg.useGravity = true;
         rg.isKinematic = false;
     }
-
 }

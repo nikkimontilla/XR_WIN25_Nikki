@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -56,6 +57,8 @@ public class Blade : MonoBehaviour
                 // Log error if we couldn't find the controller in the hierarchy
                 Debug.LogError("Could not find Controller GameObject in hierarchy");
             }
+
+            EnablePhysics();
         }
     }
 
@@ -73,5 +76,23 @@ public class Blade : MonoBehaviour
         // Remove the listeners when disabled to prevent memory leaks
         m_grabInteractable.selectEntered.RemoveListener(OnSelectEnter);
         m_grabInteractable.selectExited.RemoveListener(ResetControllerDataReader);
+    }
+
+    public void Drop()
+    {
+        IXRSelectInteractable grabinteractable = m_grabInteractable;
+        m_interactor.interactionManager.CancelInteractableSelection(grabinteractable);
+    }
+
+    public void EnablePhysics()
+    {
+        Rigidbody rigidBody = GetComponent<Rigidbody>();
+        rigidBody.constraints = RigidbodyConstraints.None;
+    }
+
+    public void DisablePhysics()
+    {
+        Rigidbody rigidBody = GetComponent<Rigidbody>();
+        rigidBody.constraints = RigidbodyConstraints.FreezeAll;
     }
 }
