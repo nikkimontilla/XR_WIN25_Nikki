@@ -1580,6 +1580,10 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> parent of eda69a8 (Lumberjack)
 --- !u!1001 &224872708
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1667,6 +1671,11 @@ GameObject:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> parent of eda69a8 (Lumberjack)
 --- !u!1 &225847614
 GameObject:
   m_ObjectHideFlags: 0
@@ -4422,6 +4431,10 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> parent of eda69a8 (Lumberjack)
 --- !u!1 &579400476 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1488225247473133077, guid: 4b0fe633df71c5c4797c427bdc567ac6, type: 3}
@@ -4454,6 +4467,11 @@ MonoBehaviour:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> parent of eda69a8 (Lumberjack)
 --- !u!1 &602859959
 GameObject:
   m_ObjectHideFlags: 0
@@ -11706,6 +11724,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> parent of eda69a8 (Lumberjack)
 --- !u!1001 &1579021237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11790,6 +11812,11 @@ PrefabInstance:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> parent of eda69a8 (Lumberjack)
 --- !u!1 &1595563443
 GameObject:
   m_ObjectHideFlags: 0
@@ -12009,9 +12036,18 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> Stashed changes
+=======
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> parent of eda69a8 (Lumberjack)
 --- !u!1 &1628920332 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8298045291338814966, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
@@ -12031,6 +12067,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpInput: {fileID: 1912652643298667840, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 <<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> parent of eda69a8 (Lumberjack)
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -16887,6 +16929,15 @@ PrefabInstance:
     m_AddedComponents:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+    - targetCorrespondingSourceObject: {fileID: 8298045291338814966, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1628920333}
+>>>>>>> Stashed changes
+>>>>>>> parent of eda69a8 (Lumberjack)
 =======
     - targetCorrespondingSourceObject: {fileID: 8298045291338814966, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       insertIndex: -1
@@ -16940,6 +16991,13 @@ MonoBehaviour:
     m_Reference: {fileID: 2877524234450482960, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+  <Velocity>k__BackingField: {x: 0, y: 0, z: 0}
+>>>>>>> Stashed changes
+>>>>>>> parent of eda69a8 (Lumberjack)
 =======
   <Velocity>k__BackingField: {x: 0, y: 0, z: 0}
 >>>>>>> Stashed changes
@@ -16980,6 +17038,13 @@ MonoBehaviour:
     m_Reference: {fileID: 1747593766835899199, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+  <Velocity>k__BackingField: {x: 0, y: 0, z: 0}
+>>>>>>> Stashed changes
+>>>>>>> parent of eda69a8 (Lumberjack)
 =======
   <Velocity>k__BackingField: {x: 0, y: 0, z: 0}
 >>>>>>> Stashed changes
@@ -18120,9 +18185,18 @@ SceneRoots:
   - {fileID: 1703568386}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> parent of eda69a8 (Lumberjack)
   - {fileID: 1579021237}
   - {fileID: 224872708}
 =======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> parent of eda69a8 (Lumberjack)
