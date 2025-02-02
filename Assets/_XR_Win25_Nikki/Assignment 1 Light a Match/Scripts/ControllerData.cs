@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// This script is in charge of reading data from the touch controller 
+/// This script is in charge of reading (velocity) data from the controller 
 /// </summary>
 /// 
 
@@ -11,8 +11,6 @@ public class ControllerData : MonoBehaviour
     //Calling Action from the XR Input Action in the Inspector
     [SerializeField] InputActionProperty velocityProperty;
 
-    // get function reads
-    // private set function limits it to this script
     // Vertor3.zero is the default value
     public Vector3 Velocity { get; private set; } = Vector3.zero;
 

@@ -4,8 +4,11 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
-[RequireComponent(typeof(XRGrabInteractable))]
+/// <summary>
+/// This scripts tracks when the match is used + disables the flame when the match is dropped
+/// </summary>
 
+[RequireComponent(typeof(XRGrabInteractable))]
 public class StickIgniter : MonoBehaviour
 {
     // References to required components
@@ -13,25 +16,39 @@ public class StickIgniter : MonoBehaviour
     public ControllerData m_controllerData;
     XRBaseInteractor m_interactor;
 
+    // Reference to BoxIgniter to stop fire
+    private BoxIgniter m_boxIgniter;
+
     private void Awake()
     {
         // Get the XRGrabInteractable component
         m_grabInteractable = GetComponent<XRGrabInteractable>();
+        // Find the BoxIgniter in the scene
+        m_boxIgniter = FindFirstObjectByType<BoxIgniter>();
     }
 
     private void OnEnable()
     {
         if (m_grabInteractable == null)
             return;
-
         // Reads velocity of controller instead of interactables
         m_grabInteractable.selectEntered.AddListener(OnSelectEnter);
-        m_grabInteractable.selectExited.AddListener(ResetControllerDataReader);
+        m_grabInteractable.selectExited.AddListener(OnSelectExit);
+    }
+
+    private void OnSelectExit(SelectExitEventArgs arg0)
+    {
+        // Stop fire when dropped
+        if (m_boxIgniter != null)
+        {
+            m_boxIgniter.StopAllEffects();
+        }
+        ResetControllerDataReader(arg0);
     }
 
     private void OnSelectEnter(SelectEnterEventArgs arg)
     {
-        // Set the interactor that is grabbing the axe
+        // Set the interactor that is grabbing the match
         m_interactor = arg.interactorObject as XRBaseInteractor;
 
         // Debug log to check if we're getting the interactor
@@ -58,8 +75,6 @@ public class StickIgniter : MonoBehaviour
                 // Log error if we couldn't find the controller in the hierarchy
                 Debug.LogError("Could not find Controller GameObject in hierarchy");
             }
-
-            EnablePhysics();
         }
     }
 
@@ -73,27 +88,8 @@ public class StickIgniter : MonoBehaviour
     {
         if (m_grabInteractable == null)
             return;
-
         // Remove the listeners when disabled to prevent memory leaks
         m_grabInteractable.selectEntered.RemoveListener(OnSelectEnter);
-        m_grabInteractable.selectExited.RemoveListener(ResetControllerDataReader);
-    }
-
-    public void Drop()
-    {
-        IXRSelectInteractable grabinteractable = m_grabInteractable;
-        m_interactor.interactionManager.CancelInteractableSelection(grabinteractable);
-    }
-
-    public void EnablePhysics()
-    {
-        Rigidbody rigidBody = GetComponent<Rigidbody>();
-        rigidBody.constraints = RigidbodyConstraints.None;
-    }
-
-    public void DisablePhysics()
-    {
-        Rigidbody rigidBody = GetComponent<Rigidbody>();
-        rigidBody.constraints = RigidbodyConstraints.FreezeAll;
+        m_grabInteractable.selectExited.RemoveListener(OnSelectExit);  
     }
 }
