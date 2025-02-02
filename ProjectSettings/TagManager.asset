@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Anchor
+  - Blade
+  - Stick Igniter
   layers:
   - Default
   - TransparentFX
