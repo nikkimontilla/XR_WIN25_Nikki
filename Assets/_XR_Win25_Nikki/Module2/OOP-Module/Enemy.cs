@@ -1,19 +1,25 @@
+using System.Collections;
 using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
-    [SerializeField] public Transform m_playerTarget;
-    [SerializeField] public float m_attackRate;
-    [SerializeField] public float m_attackRange;
-    [SerializeField] public int m_attackDamage;
+    [SerializeField] protected Transform m_playerTarget;
+    [SerializeField] public float m_attackRate = 3f;
+    [SerializeField] public float m_attackRange = 0.5f;
+    [SerializeField] protected int m_attackDamage = 1;
 
-    [SerializeField] public string Name { get; protected set; }
+    [field: SerializeField] public string Name { get; protected set; }
 
     [SerializeField] public Coroutine attackCoroutine;
 
     [SerializeField] public bool IsWithinAttackRange => Vector3.Distance(transform.position, m_playerTarget.position) < m_attackRange;
 
-    //methods similar
+    protected virtual void Update()
+    {
+        if (IsWithinAttackRange)
+            HandleAttack();
+    }
+
     private void Awake()
     {
         if (m_playerTarget == null) m_playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
@@ -38,4 +44,27 @@ public abstract class Enemy : MonoBehaviour
             previousPoint = newPoint; // Move to the new point for the next line
         }
     }
+
+    public void HandleAttack()
+    {
+        if (attackCoroutine == null)
+            attackCoroutine = StartCoroutine(AttackCoroutine());
+    }
+
+    protected virtual void Attack()
+    {
+        Debug.Log($"{Name} is attacking with {m_attackDamage} damage!");
+    }
+
+    protected virtual IEnumerator AttackCoroutine()
+    {
+        while (IsWithinAttackRange)
+        {
+            Attack();
+            yield return new WaitForSeconds(m_attackRate);
+        }
+
+        attackCoroutine = null; // Reset the coroutine reference when the enemy moves out of range
+    }
+
 }

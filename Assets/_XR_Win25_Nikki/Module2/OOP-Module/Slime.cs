@@ -6,40 +6,36 @@ public class Slime : Enemy
 {
     [SerializeField] private float m_moveSpeed = 0.5f;
 
-    private void Update()
+    //Moved to Enemy
+    protected override void Update()
     {
-        if (IsWithinAttackRange)
-            HandleAttack();
-        else
-            MoveTowardsPlayer();
-    }
+        base.Update();
 
-    private void HandleAttack()
-    {
-        if (attackCoroutine == null)
-            attackCoroutine = StartCoroutine(AttackCoroutine());
-    }
-
-    private IEnumerator AttackCoroutine()
-    {
-        while (IsWithinAttackRange)
+        if (!IsWithinAttackRange)
         {
-            Attack();
-            yield return new WaitForSeconds(m_attackRate);
+            MoveTowardsPlayer();
         }
-
-        attackCoroutine = null; // Reset the coroutine reference when the slime moves out of range
     }
 
-    private void Attack()
+    private void Awake()
     {
-        Debug.Log($"{Name} is attacking with {m_attackDamage} damage!");
+        if (m_playerTarget == null) m_playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
+    //Moved to Enemy
+    protected override IEnumerator AttackCoroutine() => base.AttackCoroutine();
+
+    //Stay in Slime
     private void MoveTowardsPlayer()
     {
         if (m_playerTarget == null) return;
 
         transform.position = Vector3.MoveTowards(transform.position, m_playerTarget.position, m_moveSpeed * Time.deltaTime);
+    }
+
+    //Moved to Enemy
+    protected override void Attack()
+    {
+        base.Attack();
     }
 }
