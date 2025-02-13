@@ -12,11 +12,17 @@ public class GateTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        gateAnim.SetTrigger("Open");
+        if (other.GetComponent<CharacterController>() != null)  
+        {
+            gateAnim.SetTrigger("Open");
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        gateAnim.SetTrigger("Close");
+        if (other.GetComponent<CharacterController>() != null)
+        {
+            gateAnim.SetTrigger("Close");
+        }
     }
 }
