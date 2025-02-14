@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ParasiteMonster : MonoBehaviour
+public class DangerZone : MonoBehaviour
 {
     private Animator parasiteAnim;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -17,11 +17,11 @@ public class ParasiteMonster : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        parasiteAnim.SetBool("Player Proximity", true);
+        parasiteAnim.SetBool("Player Danger Zone", true);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        parasiteAnim.SetBool("Player Proximity", false);
+        parasiteAnim.SetBool("Player Danger Zone", false);
     }
 }

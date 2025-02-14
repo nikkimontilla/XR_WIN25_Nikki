@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class SpearTrigger : MonoBehaviour
+public class SafeZone : MonoBehaviour
 {
-    private Animator spearAnim;
+    private Animator parasiteAnim;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        spearAnim = GetComponent<Animator>();
+        parasiteAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -14,4 +14,10 @@ public class SpearTrigger : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        parasiteAnim.SetTrigger("Player Hide");
+    }
+
 }

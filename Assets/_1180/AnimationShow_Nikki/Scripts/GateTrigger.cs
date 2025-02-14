@@ -1,28 +1,37 @@
+using Unity.XR.CoreUtils;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class GateTrigger : MonoBehaviour
 {
     private Animator gateAnim;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        // Just get the animator component
         gateAnim = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<CharacterController>() != null)  
+        // Check specifically for the XR Origin's camera offset
+        if (other.gameObject.GetComponentInParent<XROrigin>() != null ||
+            other.CompareTag("XROrigin"))
         {
             gateAnim.SetTrigger("Open");
+
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<CharacterController>() != null)
+        // Check specifically for the XR Origin's camera offset
+        if (other.gameObject.GetComponentInParent<XROrigin>() != null ||
+            other.CompareTag("XROrigin"))
         {
+           
             gateAnim.SetTrigger("Close");
+
         }
     }
 }
