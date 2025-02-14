@@ -17,9 +17,9 @@ public class Slime : Enemy
         }
     }
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (m_playerTarget == null) m_playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
+        base.Awake();
     }
 
     //Moved to Enemy

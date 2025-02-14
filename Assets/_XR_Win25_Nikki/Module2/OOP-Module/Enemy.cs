@@ -20,7 +20,7 @@ public abstract class Enemy : MonoBehaviour
             HandleAttack();
     }
 
-    private void Awake()
+    protected virtual void Awake()
     {
         if (m_playerTarget == null) m_playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
     }
