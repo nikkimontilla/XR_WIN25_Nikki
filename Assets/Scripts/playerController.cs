@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -39,5 +40,15 @@ public class PlayerController : MonoBehaviour
 
         // Apply force to the Rigidbody to move the player.
         rb.AddForce(movement * speed);
+    }
+
+    internal void detractHealth()
+    {
+        throw new NotImplementedException();
+    }
+
+    internal void addHealth()
+    {
+        throw new NotImplementedException();
     }
 }
