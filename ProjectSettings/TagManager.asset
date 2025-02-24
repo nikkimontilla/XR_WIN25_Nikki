@@ -7,6 +7,9 @@ TagManager:
   - Anchor
   - Blade
   - Stick Igniter
+  - Firestone
+  - Waterstone
+  - Foreststone
   layers:
   - Default
   - TransparentFX
