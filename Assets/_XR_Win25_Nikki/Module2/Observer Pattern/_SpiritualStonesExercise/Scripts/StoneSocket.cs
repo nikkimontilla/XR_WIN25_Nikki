@@ -10,10 +10,8 @@ using UnityEngine;
 
         private bool isOccupied = false;
 
-        static int numberOfStonePlace = 0;
+        public static int numberOfStonePlace = 0;
 
-        [SerializeField] private SlidingDoor slidingDoor;
-        [SerializeField] private AudioSource audioSource;   
 
     private void OnTriggerEnter(Collider other)
         {
@@ -26,12 +24,6 @@ using UnityEngine;
 
                 Debug.Log($"{other.gameObject.name} gameobject entered the trigger");
             }
-
-            if (numberOfStonePlace == 3)
-            {
-                slidingDoor.Open();
-                audioSource.Play();
-             }
         }
 
         private void OnTriggerExit(Collider other)
