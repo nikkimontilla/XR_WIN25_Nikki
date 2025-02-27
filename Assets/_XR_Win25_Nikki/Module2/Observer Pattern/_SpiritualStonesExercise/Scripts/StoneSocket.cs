@@ -12,6 +12,11 @@ using UnityEngine;
 
         public static int numberOfStonePlace = 0;
 
+    #region Events
+
+    public static event Action<StoneSocket> OnAllStonesPlaced;
+
+    #endregion 
 
     private void OnTriggerEnter(Collider other)
         {
@@ -19,6 +24,11 @@ using UnityEngine;
             {
                 isOccupied = true;
                 numberOfStonePlace++;
+
+            if (numberOfStonePlace == 3)
+            {
+                    OnAllStonesPlaced?.Invoke(this);
+            }
 
                 Debug.Log($"{numberOfStonePlace} number of stone placed");
 

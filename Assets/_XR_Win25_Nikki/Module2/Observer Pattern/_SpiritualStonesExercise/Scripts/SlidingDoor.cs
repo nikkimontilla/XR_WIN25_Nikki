@@ -1,19 +1,43 @@
 using System.Collections;
+using System.Net.Sockets;
 using UnityEngine;
 
 
-    public class SlidingDoor : MonoBehaviour
+public class SlidingDoor : MonoBehaviour
+{
+    [SerializeField] private Transform openDooraPosition;
+    [SerializeField] private Transform closeDoorPosition;
+    [SerializeField] private AnimationCurve curve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
+
+    [Tooltip("Slide movement duration in seconds")]
+    [SerializeField] private float slideDuration = 5.0f;
+
+
+    [SerializeField] StoneSocket fireStoneSocket;
+    [SerializeField] StoneSocket waterStoneSocket;
+    [SerializeField] StoneSocket forestStoneSocket;
+
+    private Coroutine doorSlideCoroutine;
+
+
+    private void OnEnable()
     {
-        [SerializeField] private Transform openDooraPosition;
-        [SerializeField] private Transform closeDoorPosition;
-        [SerializeField] private AnimationCurve curve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
+        //Subscribing to events 
+        StoneSocket.OnAllStonesPlaced += Open;
+        //waterStoneSocket.OnAllStonesPlaced += Open;
+        //forestStoneSocket.OnAllStonesPlaced += Open;
+                               
+    }
 
-        [Tooltip ("Slide movement duration in seconds")]
-        [SerializeField] private float slideDuration = 5.0f; 
+    private void OnDisable()
+    {
+        //Unsubscribing to events 
+        StoneSocket.OnAllStonesPlaced -= Open;
+        //waterStoneSocket.OnAllStonesPlaced -= Open;
+        //forestStoneSocket.OnAllStonesPlaced -= Open;
 
-        private Coroutine doorSlideCoroutine;
-
-        void Start()
+    }
+    void Start()
         {
             Close();
         }
@@ -35,13 +59,14 @@ using UnityEngine;
         }
 
         [ContextMenu("Open")] // This allows running the function from the Editor to test it (dotStack Menu next to Component Name). Only works for functions with no parameters.
-        public void Open()
+        private void Open(StoneSocket socket)
         {
             StopDoorSlideCoroutine(); // Stop any existing coroutine to avoid conflicts
             doorSlideCoroutine = StartCoroutine(SlideDoor(openDooraPosition.position));
+            Debug.Log("Object that triggered the event is " + socket.gameObject.name);
         }
 
-        [ContextMenu("Close")] 
+    [ContextMenu("Close")] 
         public void Close()
         {
             StopDoorSlideCoroutine();
@@ -56,15 +81,6 @@ using UnityEngine;
                 doorSlideCoroutine = null;
             }
         }
-
-    private void Update()
-    {
-        if (StoneSocket.numberOfStonePlace == 2)
-        {
-            Open();
-        }
-        
-    }
 }
 
 
